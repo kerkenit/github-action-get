@@ -1,0 +1,15 @@
+# action.yml
+name: 'Start Jenkins server'
+description: 'Trigger jenkins jobs'
+inputs:
+  curl-url:
+    description: 'curl url'
+    required: true
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.curl-url}}
+branding:
+  icon: 'arrow-right-circle'
+  color: 'blue'
